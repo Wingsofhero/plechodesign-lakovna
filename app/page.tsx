@@ -74,7 +74,7 @@ export default function Home() {
         <p className="section-kicker">ČO ROBÍME</p>
         <div className="intro-grid">
           <h2>Od drobného škrabanca<br />po <em>kompletný lak.</em></h2>
-          <p>Poškodený lak nemusí znamenať trvalú stopu. V Plechodesign sa venujeme opravám laku aj profesionálnemu lakovaniu vozidiel s dôrazom na čisté spracovanie a výsledný detail.</p>
+          <p>V spoločnosti PlechoDesign si uvedomujeme dôležitosť kvalitného lakovania áut. Okrem toho, že zohráva kľúčovú úlohu pri ochrane karosérie, odráža aj váš osobný štýl.</p>
         </div>
 
         <div className="service-cards">
