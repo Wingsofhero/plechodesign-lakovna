@@ -8,12 +8,12 @@ const PHONE_LINK = "tel:+421949189314";
 const MAP_LINK = "https://maps.app.goo.gl/i9bEoH8htcNDRVp47?g_st=iw";
 
 const gallery = [
-  { src: "/images/realizacia-cierne-auto.jpg", alt: "Čierne auto pripravené na lakovanie v lakovacom boxe" },
-  { src: "/images/realizacia-zlata.jpg", alt: "Lakovanie karosérie auta v zlatom odtieni" },
-  { src: "/images/realizacia-suv.jpg", alt: "Svetlé SUV počas lakovania karosérie" },
-  { src: "/images/realizacia-modre-auto.jpg", alt: "Modré auto pripravené na opravu laku" },
-  { src: "/images/realizacia-kapota.jpg", alt: "Čerstvo nalakovaná čierna kapota s lesklým povrchom" },
-  { src: "/images/realizacia-dvere.jpg", alt: "Lokálna oprava a lakovanie dverí auta" },
+  { src: "/images/realizacia-cierne-auto.webp", alt: "Čierne auto pripravené na lakovanie v lakovacom boxe" },
+  { src: "/images/realizacia-zlata.webp", alt: "Lakovanie karosérie auta v zlatom odtieni" },
+  { src: "/images/realizacia-suv.webp", alt: "Svetlé SUV počas lakovania karosérie" },
+  { src: "/images/realizacia-modre-auto.webp", alt: "Modré auto pripravené na opravu laku" },
+  { src: "/images/realizacia-kapota.webp", alt: "Čerstvo nalakovaná čierna kapota s lesklým povrchom" },
+  { src: "/images/realizacia-dvere.webp", alt: "Lokálna oprava a lakovanie dverí auta" },
 ];
 
 export default function Home() {
@@ -55,7 +55,7 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <Image src="/images/hero-lakovanie.jpg" alt="Profesionálne lakovanie auta v prevádzke Plechodesign" fill priority sizes="100vw" />
+        <Image src="/images/hero-lakovanie.webp" alt="Profesionálne lakovanie auta v prevádzke Plechodesign" fill priority sizes="100vw" />
         <div className="hero-shade" />
         <div className="hero-copy">
           <p className="eyebrow">AUTOLAKOVŇA · PEZINOK</p>
@@ -87,7 +87,7 @@ export default function Home() {
             </div>
           </article>
           <article className="service-card service-industry">
-            <Image src="/images/lakovaci-box.jpg" alt="Lakovací box v prevádzke Plechodesign" fill sizes="(max-width: 800px) 100vw, 50vw" />
+            <Image src="/images/lakovaci-box.webp" alt="Lakovací box v prevádzke Plechodesign" fill sizes="(max-width: 800px) 100vw, 50vw" />
             <div className="card-overlay" />
             <div className="service-number">02</div>
             <div>
