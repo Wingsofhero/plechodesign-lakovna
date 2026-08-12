@@ -7,8 +7,13 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   title: "Plechodesign | Autolakovňa Pezinok",
-  description: "Profesionálne lakovanie áut, opravy laku po škrabancoch a poškodeniach a priemyselné lakovanie kovových výrobkov v Pezinku.",
-  openGraph: { title: "Plechodesign | Autolakovňa Pezinok", description: "Profesionálne lakovanie áut a kovových výrobkov v Pezinku.", locale: "sk_SK", type: "website" },
+  description: "Profesionálne lakovanie áut, opravy škrabancov a poškodeného laku a priemyselné lakovanie kovových výrobkov v Pezinku.",
+  openGraph: {
+    title: "Plechodesign | Autolakovňa Pezinok",
+    description: "Profesionálne lakovanie áut a kovových výrobkov v Pezinku.",
+    locale: "sk_SK",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
