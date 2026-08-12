@@ -1,178 +1,70 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useState } from "react";
-
-const PHONE_DISPLAY = "0949 189 314";
-const PHONE_LINK = "tel:+421949189314";
-const MAP_LINK = "https://maps.app.goo.gl/i9bEoH8htcNDRVp47?g_st=iw";
-const ASSET_BASE = "https://raw.githubusercontent.com/Wingsofhero/plechodesign-lakovna/main/public/images";
-
-const gallery = [
-  { src: `${ASSET_BASE}/realizacia-cierne-auto.webp`, alt: "Čierne auto pripravené na lakovanie v lakovacom boxe" },
-  { src: `${ASSET_BASE}/realizacia-zlata.webp`, alt: "Lakovanie karosérie auta v zlatom odtieni" },
-  { src: `${ASSET_BASE}/realizacia-suv.webp`, alt: "Svetlé SUV počas lakovania karosérie" },
-  { src: `${ASSET_BASE}/realizacia-modre-auto.webp`, alt: "Modré auto pripravené na opravu laku" },
-  { src: `${ASSET_BASE}/realizacia-kapota.webp`, alt: "Čerstvo nalakovaná čierna kapota s lesklým povrchom" },
-  { src: `${ASSET_BASE}/realizacia-dvere.webp`, alt: "Lokálna oprava a lakovanie dverí auta" },
-];
-
-const benefits = [
-  { number: "01", title: "Opravy poškodeného laku", text: "Od škrabancov a odrenín až po poškodené časti karosérie." },
-  { number: "02", title: "Lakovanie autodielov", text: "Profesionálne lakovanie jednotlivých dielov aj väčších častí vozidla." },
-  { number: "03", title: "Dohoda priamo s lakovňou", text: "Zavolajte nám, opíšte poškodenie a dohodneme si ďalší postup." },
-];
+import Link from "next/link";
+import { Footer, Header } from "./components/SiteChrome";
+import { PhotoGallery } from "./components/PhotoGallery";
+import { SmsForm } from "./components/SmsForm";
+import { services, site } from "./site-data";
 
 export default function Home() {
-  const [index, setIndex] = useState(0);
-  const [lightbox, setLightbox] = useState(false);
+  return <main>
+    <Header />
+    <section className="hero" id="top">
+      <Image src="/images/gallery/praca-12.webp" alt="Vozidlo počas profesionálneho lakovania v Plechodesign" fill priority sizes="100vw" />
+      <div className="hero-overlay" />
+      <div className="hero-content">
+        <p className="overline">AUTOLAKOVŇA · PEZINOK</p>
+        <h1>Precízna oprava.<br />Lak, ktorý vyzerá <em>správne.</em></h1>
+        <p>Opravujeme škrabance a poškodený lak, lakujeme autodiely aj karosérie. Klampiarske, mechanické a poistné opravy vieme koordinovať na jednom mieste.</p>
+        <div className="hero-actions"><a className="btn red" href="#objednavka">Dohodnúť obhliadku <span>↗</span></a><a className="btn glass" href={site.phoneHref}>Zavolať {site.phone}</a></div>
+      </div>
+      <div className="hero-place"><small>MIESTO VÝKONU PRÁCE</small><b>Viničnianska cesta 23<br />Pezinok</b></div>
+    </section>
 
-  const move = (direction: number) => {
-    setIndex((current) => (current + direction + gallery.length) % gallery.length);
-  };
+    <section className="trust-row">
+      <article><span>01</span><h2>Priamo v lakovni</h2><p>Poškodenie si pozrieme a navrhneme ďalší postup.</p></article>
+      <article><span>02</span><h2>Nadväzujúce práce</h2><p>Klampiareň a mechanická dielňa sú v rovnakej budove.</p></article>
+      <article><span>03</span><h2>Pomoc pri škode</h2><p>Spolupracujeme s odborníkom na poistné udalosti.</p></article>
+    </section>
 
-  useEffect(() => {
-    if (!lightbox) return;
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setLightbox(false);
-      if (event.key === "ArrowLeft") move(-1);
-      if (event.key === "ArrowRight") move(1);
-    };
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", onKey);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [lightbox]);
+    <section className="split intro-block">
+      <div><p className="eyebrow">PLECHODESIGN</p><h2>Od malého škrabanca<br />po rozsiahlejšiu <em>opravu.</em></h2></div>
+      <div className="prose"><p>Kvalitné lakovanie nie je iba otázkou vzhľadu. Pomáha chrániť karosériu a dotvára celkový charakter vozidla.</p><p>V Plechodesign opravujeme lak po škrabancoch, odreninách a ďalších poškodeniach. Postaráme sa o jednotlivé diely aj väčšie časti karosérie.</p><a className="text-link" href={site.phoneHref}>Poradiť sa o oprave →</a></div>
+    </section>
 
-  return (
-    <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="Plechodesign – domov">
-          <span className="brand-name">Plecho<span>Design</span></span>
-          <small>AUTOLAKOVŇA</small>
-        </a>
-        <nav aria-label="Hlavná navigácia">
-          <a href="#sluzby">Služby</a>
-          <a href="#realizacie">Realizácie</a>
-          <a href="#priemysel">Priemyselné lakovanie</a>
-          <a href="#kontakt">Kontakt</a>
-        </nav>
-        <a className="header-call" href={PHONE_LINK}>Zavolať <span>{PHONE_DISPLAY}</span></a>
-      </header>
+    <section className="service-section" id="sluzby">
+      <div className="section-head"><div><p className="eyebrow">SLUŽBY</p><h2>Opravu vieme<br />spojiť do <em>jedného celku.</em></h2></div><p>Jeden kontakt pre lakovanie a koordináciu ďalších prác potrebných na opravu vozidla.</p></div>
+      <div className="service-grid">{services.map((service) => <article key={service.n}><span>{service.n}</span><h3>{service.title}</h3><p>{service.text}</p></article>)}</div>
+      <Link className="btn dark" href="/sluzby">Pozrieť všetky služby <span>→</span></Link>
+    </section>
 
-      <section className="hero" id="top">
-        <Image src={`${ASSET_BASE}/hero-lakovanie.webp`} alt="Profesionálne lakovanie auta v prevádzke Plechodesign" fill priority sizes="100vw" />
-        <div className="hero-shade" />
-        <div className="hero-copy">
-          <p className="eyebrow">AUTOLAKOVŇA V PEZINKU</p>
-          <h1>Vášmu autu<br />vrátime <em>lesk.</em></h1>
-          <p className="hero-lead">Profesionálne lakovanie áut, opravy škrabancov a poškodeného laku. Kvalitne, komplexne a rýchlo.</p>
-          <div className="actions">
-            <a className="button button-primary" href={PHONE_LINK}>Zavolať teraz <span aria-hidden="true">↗</span></a>
-            <a className="button button-ghost" href={MAP_LINK} target="_blank" rel="noreferrer">Navigovať k nám <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-        <div className="hero-address"><span>Miesto výkonu práce</span><p>Viničnianska cesta 23<br />Pezinok</p></div>
-      </section>
+    <section className="insurance-band">
+      <Image src="/images/gallery/praca-17.webp" alt="Vozidlo pripravené na opravu poškodenia" fill sizes="100vw" />
+      <div className="insurance-overlay" />
+      <div className="insurance-copy"><p className="overline">POISTNÁ UDALOSŤ</p><h2>Poškodenie vozidla?<br /><em>Pomôžeme s postupom.</em></h2><p>Pri poistných udalostiach spolupracujeme s odborníkom. Ozvite sa najprv nám — prejdeme s vami situáciu a pomôžeme koordinovať ďalšie kroky od obhliadky po opravu.</p><div><Link className="btn red" href="/poistne-udalosti">Ako postupovať <span>→</span></Link><a className="btn glass" href={site.phoneHref}>Zavolať teraz</a></div></div>
+    </section>
 
-      <section className="benefit-strip" aria-label="Prehľad služieb">
-        {benefits.map((benefit) => (
-          <article key={benefit.number}>
-            <span>{benefit.number}</span>
-            <div><h2>{benefit.title}</h2><p>{benefit.text}</p></div>
-          </article>
-        ))}
-      </section>
+    <section className="gallery-section" id="realizacie">
+      <div className="section-head light"><div><p className="eyebrow">Z NAŠEJ LAKOVNE</p><h2>Viac práce.<br />Viac <em>detailov.</em></h2></div><p>Autentické zábery priamo z lakovacieho boxu. Menší formát zachováva prirodzený charakter fotografií.</p></div>
+      <PhotoGallery />
+    </section>
 
-      <section className="intro" id="sluzby">
-        <div className="intro-heading">
-          <p className="section-kicker">LAKOVANIE ÁUT</p>
-          <h2>Kvalitný lak chráni auto<br />a dotvára jeho <em>charakter.</em></h2>
-        </div>
-        <div className="intro-copy">
-          <p>V Plechodesign si uvedomujeme dôležitosť kvalitného lakovania áut. Lak pomáha chrániť karosériu a zároveň odráža váš osobný štýl.</p>
-          <p>Postaráme sa o opravu laku po škrabancoch a poškodeniach, lakovanie jednotlivých autodielov aj väčších častí karosérie.</p>
-          <a href={PHONE_LINK}>Poradiť sa o oprave <span>↗</span></a>
-        </div>
-      </section>
+    <section className="industrial" id="priemysel">
+      <Image src="/images/priemyselne-lakovanie-brany.png" alt="Ilustračná vizualizácia kovových brán v lakovacom boxe" fill sizes="100vw" />
+      <div className="industrial-overlay" />
+      <div className="industrial-copy"><p className="overline">NIELEN PRE AUTÁ</p><h2>Priemyselné lakovanie<br /><em>kovových výrobkov.</em></h2><p>Poskytujeme aj priemyselné lakovanie kovových výrobkov kvalitnými epoxidovými a polyuretánovými nástrekmi.</p><a className="btn red" href={site.phoneHref}>Prebrať zákazku <span>↗</span></a><small>Ilustračná vizualizácia použitia reálneho lakovacieho boxu</small></div>
+    </section>
 
-      <section className="quality-section">
-        <p className="section-kicker">AKO PRACUJEME</p>
-        <h2>Kvalitne. Komplexne. <em>Rýchlo.</em></h2>
-        <div className="quality-grid">
-          <article><span>01</span><h3>Posúdenie poškodenia</h3><p>Najprv si prejdeme rozsah poškodenia a dohodneme vhodný postup opravy.</p></article>
-          <article><span>02</span><h3>Príprava a lakovanie</h3><p>Povrch pripravíme a nalakujeme podľa potrieb konkrétneho dielu alebo karosérie.</p></article>
-          <article><span>03</span><h3>Výsledný detail</h3><p>Dôraz kladieme na čisté spracovanie a vzhľad opraveného povrchu.</p></article>
-        </div>
-      </section>
+    <section className="reviews" id="recenzie">
+      <div><p className="eyebrow">GOOGLE PROFIL</p><h2>Skúsenosti zákazníkov<br />sú pre nás <em>dôležité.</em></h2></div>
+      <div className="review-call"><div className="stars" aria-label="Google recenzie">★★★★★</div><p>Aktuálne hodnotenia a skúsenosti zákazníkov nájdete na Google profile Plechodesign. Konkrétne recenzie na stránku doplníme iba v ich pôvodnom znení.</p><a className="btn dark" href={site.maps} target="_blank" rel="noreferrer">Otvoriť Google profil <span>↗</span></a></div>
+    </section>
 
-      <section className="gallery-section" id="realizacie">
-        <div className="gallery-heading">
-          <div><p className="section-kicker">Z NAŠEJ LAKOVNE</p><h2>Výsledok najlepšie<br />vidno v <em>detaile.</em></h2></div>
-          <div className="gallery-controls">
-            <button onClick={() => move(-1)} aria-label="Predchádzajúca fotografia">←</button>
-            <span>{String(index + 1).padStart(2, "0")} / {String(gallery.length).padStart(2, "0")}</span>
-            <button onClick={() => move(1)} aria-label="Nasledujúca fotografia">→</button>
-          </div>
-        </div>
-        <div className="gallery-window">
-          <button className="gallery-main" onClick={() => setLightbox(true)} aria-label="Otvoriť fotografiu na celú obrazovku">
-            <Image src={gallery[index].src} alt={gallery[index].alt} fill sizes="(max-width: 800px) 100vw, 68vw" />
-            <span className="zoom">ZVÄČŠIŤ <b>＋</b></span>
-          </button>
-          <button className="gallery-next" onClick={() => move(1)} aria-label="Zobraziť ďalšiu fotografiu">
-            <Image src={gallery[(index + 1) % gallery.length].src} alt="" fill sizes="30vw" />
-          </button>
-        </div>
-        <div className="dots" aria-label="Výber fotografie">
-          {gallery.map((item, itemIndex) => <button key={item.src} onClick={() => setIndex(itemIndex)} className={itemIndex === index ? "active" : ""} aria-label={`Fotografia ${itemIndex + 1}`} />)}
-        </div>
-      </section>
+    <section className="booking" id="objednavka">
+      <div><p className="eyebrow">NEZÁVÄZNÁ OBHLIADKA</p><h2>Napíšte nám,<br />čo potrebuje <em>opraviť.</em></h2><p>Formulár pripraví SMS s najdôležitejšími údajmi. Fotografie poškodenia môžete poslať následne po dohode.</p></div>
+      <SmsForm />
+    </section>
 
-      <section className="industrial" id="priemysel">
-        <Image src={`${ASSET_BASE}/priemyselne-lakovanie-brany.png`} alt="Ilustračný záber kovových brán v lakovacom boxe" fill sizes="100vw" />
-        <div className="industrial-shade" />
-        <div className="industrial-copy">
-          <p className="section-kicker">NIELEN PRE AUTÁ</p>
-          <h2>Priemyselné lakovanie<br /><em>kovových výrobkov.</em></h2>
-          <p>Poskytujeme aj priemyselné lakovanie kovových výrobkov kvalitnými epoxidovými a polyuretánovými nástrekmi.</p>
-          <a className="button button-primary" href={PHONE_LINK}>Prebrať zákazku <span>↗</span></a>
-          <small>Ilustračná vizualizácia použitia lakovacieho boxu</small>
-        </div>
-      </section>
-
-      <section className="contact" id="kontakt">
-        <div className="contact-copy">
-          <p className="section-kicker">KONTAKT</p>
-          <h2>Dohodnime si<br />ďalší <em>postup.</em></h2>
-          <p>Zavolajte nám alebo si otvorte navigáciu priamo k lakovni.</p>
-        </div>
-        <div className="contact-details">
-          <div><span>TELEFÓN</span><a href={PHONE_LINK}>{PHONE_DISPLAY}</a></div>
-          <div><span>MIESTO VÝKONU PRÁCE</span><p>Viničnianska cesta 23<br />Pezinok</p></div>
-          <div className="contact-actions">
-            <a className="button button-dark" href={PHONE_LINK}>Zavolať <span>↗</span></a>
-            <a className="button button-outline" href={MAP_LINK} target="_blank" rel="noreferrer">Spustiť navigáciu <span>↗</span></a>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        <a className="brand footer-brand" href="#top"><span className="brand-name">Plecho<span>Design</span></span><small>AUTOLAKOVŇA</small></a>
-        <p>Profesionálne lakovanie áut a kovových výrobkov v Pezinku.</p>
-        <a href="#top">Späť hore ↑</a>
-      </footer>
-
-      {lightbox && (
-        <div className="lightbox" role="dialog" aria-modal="true" aria-label="Galéria realizácií">
-          <button className="lightbox-close" onClick={() => setLightbox(false)} aria-label="Zatvoriť galériu">×</button>
-          <button className="lightbox-arrow left" onClick={() => move(-1)} aria-label="Predchádzajúca fotografia">←</button>
-          <div className="lightbox-image"><Image src={gallery[index].src} alt={gallery[index].alt} fill sizes="95vw" /></div>
-          <button className="lightbox-arrow right" onClick={() => move(1)} aria-label="Nasledujúca fotografia">→</button>
-        </div>
-      )}
-    </main>
-  );
+    <section className="contact-band"><div><small>TELEFÓN</small><a href={site.phoneHref}>{site.phone}</a></div><div><small>MIESTO VÝKONU PRÁCE</small><p>{site.workAddress}</p></div><a className="btn red" href={site.maps} target="_blank" rel="noreferrer">Spustiť navigáciu <span>↗</span></a></section>
+    <Footer />
+  </main>;
 }
