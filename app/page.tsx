@@ -6,14 +6,15 @@ import { useEffect, useState } from "react";
 const PHONE_DISPLAY = "0949 189 314";
 const PHONE_LINK = "tel:+421949189314";
 const MAP_LINK = "https://maps.app.goo.gl/i9bEoH8htcNDRVp47?g_st=iw";
+const ASSET_BASE = "https://raw.githubusercontent.com/Wingsofhero/plechodesign-lakovna/main/public/images";
 
 const gallery = [
-  { src: "/images/realizacia-cierne-auto.webp", alt: "Čierne auto pripravené na lakovanie v lakovacom boxe" },
-  { src: "/images/realizacia-zlata.webp", alt: "Lakovanie karosérie auta v zlatom odtieni" },
-  { src: "/images/realizacia-suv.webp", alt: "Svetlé SUV počas lakovania karosérie" },
-  { src: "/images/realizacia-modre-auto.webp", alt: "Modré auto pripravené na opravu laku" },
-  { src: "/images/realizacia-kapota.webp", alt: "Čerstvo nalakovaná čierna kapota s lesklým povrchom" },
-  { src: "/images/realizacia-dvere.webp", alt: "Lokálna oprava a lakovanie dverí auta" },
+  { src: `${ASSET_BASE}/realizacia-cierne-auto.webp`, alt: "Čierne auto pripravené na lakovanie v lakovacom boxe" },
+  { src: `${ASSET_BASE}/realizacia-zlata.webp`, alt: "Lakovanie karosérie auta v zlatom odtieni" },
+  { src: `${ASSET_BASE}/realizacia-suv.webp`, alt: "Svetlé SUV počas lakovania karosérie" },
+  { src: `${ASSET_BASE}/realizacia-modre-auto.webp`, alt: "Modré auto pripravené na opravu laku" },
+  { src: `${ASSET_BASE}/realizacia-kapota.webp`, alt: "Čerstvo nalakovaná čierna kapota s lesklým povrchom" },
+  { src: `${ASSET_BASE}/realizacia-dvere.webp`, alt: "Lokálna oprava a lakovanie dverí auta" },
 ];
 
 export default function Home() {
@@ -55,7 +56,7 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <Image src="/images/hero-lakovanie.webp" alt="Profesionálne lakovanie auta v prevádzke Plechodesign" fill priority sizes="100vw" />
+        <Image src={`${ASSET_BASE}/hero-lakovanie.webp`} alt="Profesionálne lakovanie auta v prevádzke Plechodesign" fill priority sizes="100vw" />
         <div className="hero-shade" />
         <div className="hero-copy">
           <p className="eyebrow">AUTOLAKOVŇA · PEZINOK</p>
@@ -87,7 +88,7 @@ export default function Home() {
             </div>
           </article>
           <article className="service-card service-industry">
-            <Image src="/images/lakovaci-box.webp" alt="Lakovací box v prevádzke Plechodesign" fill sizes="(max-width: 800px) 100vw, 50vw" />
+            <Image src={`${ASSET_BASE}/lakovaci-box.webp`} alt="Lakovací box v prevádzke Plechodesign" fill sizes="(max-width: 800px) 100vw, 50vw" />
             <div className="card-overlay" />
             <div className="service-number">02</div>
             <div>
