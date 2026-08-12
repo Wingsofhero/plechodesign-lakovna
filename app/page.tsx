@@ -21,9 +21,9 @@ export default function Home() {
     </section>
 
     <section className="trust-row">
-      <article><div className="trust-photo"><Image src={`${assetBase}/priamo-v-lakovni.jpeg`} alt="Vozidlo po lakovaní priamo v lakovni Plechodesign" fill sizes="(max-width:800px) 82vw, 33vw" /></div><div className="trust-copy"><span>01</span><h2>Priamo v lakovni</h2><p>Poškodenie si pozrieme a navrhneme ďalší postup.</p></div></article>
-      <article><div className="trust-photo"><Image src={`${assetBase}/klampiarska-dielna.jpeg`} alt="Vozidlo počas klampiarskych prác v spolupracujúcej dielni" fill sizes="(max-width:800px) 82vw, 33vw" /></div><div className="trust-copy"><span>02</span><h2>Nadväzujúce práce</h2><p>Klampiareň a mechanická dielňa sú v rovnakej budove.</p></div></article>
-      <article><div className="trust-photo"><Image src={`${assetBase}/gallery/praca-17.webp`} alt="Vozidlo pripravené na opravu po poškodení" fill sizes="(max-width:800px) 38vw, 33vw" /></div><div className="trust-copy"><span>03</span><h2>Pomoc pri škode</h2><p>Spolupracujeme s odborníkom na poistné udalosti.</p></div></article>
+      <article><div className="trust-photo"><Image src={`${assetBase}/priamo-v-lakovni.jpeg`} alt="Vozidlo po lakovaní priamo v lakovni Plechodesign" fill sizes="(max-width:800px) 82vw, 33vw" /></div><div className="trust-copy"><h2>Priamo v lakovni</h2><p>Poškodenie si pozrieme a navrhneme ďalší postup.</p></div></article>
+      <article><div className="trust-photo"><Image src={`${assetBase}/klampiarska-dielna.jpeg`} alt="Vozidlo počas klampiarskych prác v spolupracujúcej dielni" fill sizes="(max-width:800px) 82vw, 33vw" /></div><div className="trust-copy"><h2>Nadväzujúce práce</h2><p>Klampiareň a mechanická dielňa sú v rovnakej budove.</p></div></article>
+      <article><div className="trust-photo"><Image src={`${assetBase}/gallery/praca-17.webp`} alt="Vozidlo pripravené na opravu po poškodení" fill sizes="(max-width:800px) 82vw, 33vw" /></div><div className="trust-copy"><h2>Pomoc pri škode</h2><p>Spolupracujeme s odborníkom na poistné udalosti.</p></div></article>
     </section>
 
     <section className="split intro-block">
