@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     description: "Profesionálne lakovanie áut a kovových výrobkov v Pezinku.",
     locale: "sk_SK",
     type: "website",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "PlechoDesign – Autolakovňa Pezinok" }],
+    images: [{ url: "https://raw.githubusercontent.com/Wingsofhero/plechodesign-lakovna/main/public/og.png", width: 1200, height: 630, alt: "PlechoDesign – Autolakovňa Pezinok" }],
   },
-  twitter: { card: "summary_large_image", title: "PlechoDesign | Autolakovňa Pezinok", description: "Profesionálne lakovanie áut a kovových výrobkov v Pezinku.", images: ["/og.png"] },
+  twitter: { card: "summary_large_image", title: "PlechoDesign | Autolakovňa Pezinok", description: "Profesionálne lakovanie áut a kovových výrobkov v Pezinku.", images: ["https://raw.githubusercontent.com/Wingsofhero/plechodesign-lakovna/main/public/og.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

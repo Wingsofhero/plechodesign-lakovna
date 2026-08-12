@@ -3,13 +3,13 @@ import Link from "next/link";
 import { Footer, Header } from "./components/SiteChrome";
 import { PhotoGallery } from "./components/PhotoGallery";
 import { SmsForm } from "./components/SmsForm";
-import { services, site } from "./site-data";
+import { assetBase, services, site } from "./site-data";
 
 export default function Home() {
   return <main>
     <Header />
     <section className="hero" id="top">
-      <Image src="/images/gallery/praca-12.webp" alt="Vozidlo počas profesionálneho lakovania v Plechodesign" fill priority sizes="100vw" />
+      <Image src={`${assetBase}/gallery/praca-12.webp`} alt="Vozidlo počas profesionálneho lakovania v Plechodesign" fill priority sizes="100vw" />
       <div className="hero-overlay" />
       <div className="hero-content">
         <p className="overline">AUTOLAKOVŇA · PEZINOK</p>
@@ -38,7 +38,7 @@ export default function Home() {
     </section>
 
     <section className="insurance-band">
-      <Image src="/images/gallery/praca-17.webp" alt="Vozidlo pripravené na opravu poškodenia" fill sizes="100vw" />
+      <Image src={`${assetBase}/gallery/praca-17.webp`} alt="Vozidlo pripravené na opravu poškodenia" fill sizes="100vw" />
       <div className="insurance-overlay" />
       <div className="insurance-copy"><p className="overline">POISTNÁ UDALOSŤ</p><h2>Poškodenie vozidla?<br /><em>Pomôžeme s postupom.</em></h2><p>Pri poistných udalostiach spolupracujeme s odborníkom. Ozvite sa najprv nám — prejdeme s vami situáciu a pomôžeme koordinovať ďalšie kroky od obhliadky po opravu.</p><div><Link className="btn red" href="/poistne-udalosti">Ako postupovať <span>→</span></Link><a className="btn glass" href={site.phoneHref}>Zavolať teraz</a></div></div>
     </section>
@@ -49,7 +49,7 @@ export default function Home() {
     </section>
 
     <section className="industrial" id="priemysel">
-      <Image src="/images/priemyselne-lakovanie-brany.png" alt="Ilustračná vizualizácia kovových brán v lakovacom boxe" fill sizes="100vw" />
+      <Image src={`${assetBase}/priemyselne-lakovanie-brany.png`} alt="Ilustračná vizualizácia kovových brán v lakovacom boxe" fill sizes="100vw" />
       <div className="industrial-overlay" />
       <div className="industrial-copy"><p className="overline">NIELEN PRE AUTÁ</p><h2>Priemyselné lakovanie<br /><em>kovových výrobkov.</em></h2><p>Poskytujeme aj priemyselné lakovanie kovových výrobkov kvalitnými epoxidovými a polyuretánovými nástrekmi.</p><a className="btn red" href={site.phoneHref}>Prebrať zákazku <span>↗</span></a><small>Ilustračná vizualizácia použitia reálneho lakovacieho boxu</small></div>
     </section>
