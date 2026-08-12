@@ -21,9 +21,9 @@ export default function Home() {
     </section>
 
     <section className="trust-row">
-      <article><span>01</span><h2>Priamo v lakovni</h2><p>Poškodenie si pozrieme a navrhneme ďalší postup.</p></article>
-      <article><span>02</span><h2>Nadväzujúce práce</h2><p>Klampiareň a mechanická dielňa sú v rovnakej budove.</p></article>
-      <article><span>03</span><h2>Pomoc pri škode</h2><p>Spolupracujeme s odborníkom na poistné udalosti.</p></article>
+      <article><div className="trust-photo"><Image src={`${assetBase}/gallery/praca-03.webp`} alt="Príprava vozidla na lakovanie" fill sizes="(max-width:800px) 38vw, 33vw" /></div><div className="trust-copy"><span>01</span><h2>Priamo v lakovni</h2><p>Poškodenie si pozrieme a navrhneme ďalší postup.</p></div></article>
+      <article><div className="trust-photo"><Image src={`${assetBase}/gallery/praca-11.webp`} alt="Oprava poškodenej časti karosérie" fill sizes="(max-width:800px) 38vw, 33vw" /></div><div className="trust-copy"><span>02</span><h2>Nadväzujúce práce</h2><p>Klampiareň a mechanická dielňa sú v rovnakej budove.</p></div></article>
+      <article><div className="trust-photo"><Image src={`${assetBase}/gallery/praca-17.webp`} alt="Vozidlo pripravené na opravu po poškodení" fill sizes="(max-width:800px) 38vw, 33vw" /></div><div className="trust-copy"><span>03</span><h2>Pomoc pri škode</h2><p>Spolupracujeme s odborníkom na poistné udalosti.</p></div></article>
     </section>
 
     <section className="split intro-block">
