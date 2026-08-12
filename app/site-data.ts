@@ -10,7 +10,7 @@ export const site = {
 export const assetBase = "https://raw.githubusercontent.com/Wingsofhero/plechodesign-lakovna/main/public/images";
 
 export const services = [
-  { n: "01", title: "Autolakovňa", text: "Opravy škrabancov, odrenín a poškodeného laku. Lakovanie jednotlivých dielov aj väčších častí karosérie." },
+  { n: "01", title: "Autolakovňa", text: "Opravy po nehode, škrabancov, odrenín a poškodeného laku. Lakovanie jednotlivých dielov aj väčších častí karosérie." },
   { n: "02", title: "Klampiarske opravy", text: "Klampiarske práce vieme koordinovať so spolupracujúcou dielňou priamo v rovnakej budove." },
   { n: "03", title: "Mechanické práce", text: "Ak si oprava vyžiada servisný zásah, zabezpečíme nadväznosť so spolupracujúcim autoservisom." },
   { n: "04", title: "Poistné udalosti", text: "Pri poistnej udalosti spolupracujeme s odborníkom a pomôžeme vám zorientovať sa v ďalšom postupe." },

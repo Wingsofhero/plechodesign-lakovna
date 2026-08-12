@@ -28,7 +28,7 @@ export default function Home() {
 
     <section className="split intro-block">
       <div><p className="eyebrow">PLECHODESIGN</p><h2>Od malého škrabanca<br />po rozsiahlejšiu <em>opravu.</em></h2></div>
-      <div className="prose"><p>Kvalitné lakovanie nie je iba otázkou vzhľadu. Pomáha chrániť karosériu a dotvára celkový charakter vozidla.</p><p>V Plechodesign opravujeme lak po škrabancoch, odreninách a ďalších poškodeniach. Postaráme sa o jednotlivé diely aj väčšie časti karosérie.</p><a className="text-link" href={site.phoneHref}>Poradiť sa o oprave →</a></div>
+      <div className="prose"><p>Kvalitné lakovanie nie je iba otázkou vzhľadu. Pomáha chrániť karosériu a dotvára celkový charakter vozidla.</p><p>V Plechodesign riešime opravy po nehode aj lak poškodený škrabancami, odreninami či parkovacími poškodeniami. Postaráme sa o jednotlivé diely aj väčšie časti karosérie.</p><a className="text-link" href={site.phoneHref}>Poradiť sa o oprave →</a></div>
     </section>
 
     <section className="service-section" id="sluzby">

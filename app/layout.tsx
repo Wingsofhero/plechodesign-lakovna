@@ -8,7 +8,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   metadataBase: new URL("https://plechodesign-lakovna.vercel.app"),
   title: "PlechoDesign | Autolakovňa Pezinok",
-  description: "Profesionálne lakovanie áut, opravy škrabancov a poškodeného laku a priemyselné lakovanie kovových výrobkov v Pezinku.",
+  description: "Profesionálne lakovanie áut, opravy po nehode, škrabancov a poškodeného laku a priemyselné lakovanie kovových výrobkov v Pezinku.",
   openGraph: {
     title: "PlechoDesign | Autolakovňa Pezinok",
     description: "Profesionálne lakovanie áut a kovových výrobkov v Pezinku.",
